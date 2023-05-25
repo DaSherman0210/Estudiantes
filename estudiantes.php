@@ -68,6 +68,7 @@ $all = $data -> selectAll();
               <th scope="col">REVIEW</th>
               <th scope="col">SKILLS</th>
               <th scope="col">BORRAR</th>
+              <th scope="col">ACTUALIZAR</th>
             </tr>
           </thead>
           <tbody class="" id="tabla">
@@ -91,6 +92,8 @@ $all = $data -> selectAll();
               <td> <?php echo $val['skills']?> </td>
               
               <td><a class ="btn btn-danger" href="borrarEstudiantes.php?id=<?= $val['id']?> &req=delete ">Borrar</a></td>
+              <td><a class ="btn btn-warning" href="actualizarEstudiantes.php?id=<?= $val['id']?>">Editar</a></td>
+
             </tr>
 
             <?php } ?>

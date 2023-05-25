@@ -146,6 +146,29 @@
                 return $e -> getMessage();
             }
         }
+
+        //---------------Metodo Modificar-------------------------
+
+        public function selectOne(){
+            try {
+                $stm = $this-> dbCnx -> prepare("SELECT * FROM camperV2 WHERE id = ?");
+                $stm -> execute([$this->id]);
+                return $stm -> fetchAll();
+            } catch (Exception $e) {
+                return $e -> getMessage();
+            }
+        }
+
+        //---------------Metodo Actualizador-----------------------
+
+        public function update(){
+            try {
+                $stm = $this-> dbCnx -> prepare("UPDATE camperV2 SET NOMBRES = ? , direccion = ? , logros = ? WHERE id = ?");
+                $stm -> execute([$this->nombres , $this->direccion , $this->logros , $this->id]);
+            } catch (Exception $e) {
+                return $e -> getMessage();
+            }
+        }
     }
 
 ?>
